@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function permuterValeurs() {
+            const champ1 = document.getElementById("champ1");
+            const champ2 = document.getElementById("champ2");
+            const valeur1 = champ1.value;
+            const valeur2 = champ2.value;
+            champ1.value = valeur2;
+            champ2.value = valeur1;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="champ1">
+    <input type="text" id="champ2">
+    <button onclick="permuterValeurs()">Permuter</button>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculerValeurAbsolue() {
+            const number = parseFloat(document.getElementById("number").value);
+            const valeurAbsolue = Math.abs(number);
+            document.getElementById("resultat").textContent = valeurAbsolue;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="number" id="number">
+    <button onclick="calculerValeurAbsolue()">Valeur absolue</button>
+    <p>Valeur absolue: <span id="resultat"></span></p>
+</body>
+
+</html>

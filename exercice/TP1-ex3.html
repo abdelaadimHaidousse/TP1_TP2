@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function separerNomPrenom() {
+            const nomComplet = document.getElementById("nomComplet").value;
+            const espaceIndex = nomComplet.indexOf(" ");
+            const nom = nomComplet.slice(0, espaceIndex);
+            const prenom = nomComplet.slice(espaceIndex + 1);
+            document.getElementById("nom").textContent = nom;
+            document.getElementById("prenom").textContent = prenom;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="nomComplet">
+    <button onclick="separerNomPrenom()">Séparer</button>
+    <p>Nom: <span id="nom"></span></p>
+    <p>Prénom: <span id="prenom"></span></p>
+</body>
+
+</html>

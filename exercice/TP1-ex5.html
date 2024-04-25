@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculer() {
+            const nombre1 = parseInt(document.getElementById("nombre1").value);
+            const nombre2 = parseInt(document.getElementById("nombre2").value);
+            const operation = document.getElementById("operation").value;
+            let resultat;
+            switch (operation) {
+                case "/":
+                    resultat = nombre1 / nombre2;
+                    break;
+                case "+":
+                    resultat = nombre1 + nombre2;
+                    break;
+                case "-":
+                    resultat = nombre1 - nombre2;
+                    break;
+                case "*":
+                    resultat = nombre1 * nombre2;
+                    break;
+            }
+            document.getElementById("resultat").textContent = resultat;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="number" id="nombre1">
+    <input type="number" id="nombre2">
+    <select id="operation">
+        <option value="/">/</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+    </select>
+    <button onclick="calculer()">Calculer</button>
+    <p>Résultat: <span id="resultat"></span></p>
+</body>
+
+</html>

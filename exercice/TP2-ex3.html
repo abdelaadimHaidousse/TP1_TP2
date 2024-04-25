@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function ajouterNombre() {
+      let nombre = parseInt(document.getElementById("nombre").value);
+      let cible;
+      if (nombre % 2 === 0) {
+        cible = document.querySelector(".pairs");
+      } else if (nombre % 2 === 1) {
+        cible = document.querySelector(".impairs");
+      } else {
+        alert("Veuillez saisir un nombre valide.");
+        return;
+      }
+      let element = document.createElement("p");
+      element.textContent = nombre;
+      cible.appendChild(element);
+    }
+    </script>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        #pairs,
+        #impairs {
+            flex: 1;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <label>Saisir un nombre: </label>
+    <input type="number" id="nombre">
+    <button onclick="ajouterNombre()">Ajouter</button>
+    <div class="container">
+        <div id="pairs">Nombres pairs:</div>
+        <div id="impairs">Nombres impairs:</div>
+    </div>
+</body>
+
+</html>

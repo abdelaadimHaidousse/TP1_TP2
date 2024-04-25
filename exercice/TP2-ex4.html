@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1() {
+      let moyC = parseFloat(document.getElementById("moyC").value);
+      let noteEFM = parseFloat(document.getElementById("noteEFM").value);
+      let moyenneModule = (moyC + noteEFM) / 3;
+      let appreciation;
+      let imageSrc;
+
+      if (moyenneModule < 7) {
+        appreciation = "Nul";
+        imageSrc = "face.png";
+      } else if (moyenneModule < 10) {
+        appreciation = "Insuffisant";
+        imageSrc = "halawa.png";
+      } else if (moyenneModule < 12) {
+        appreciation = "Passable";
+        imageSrc = "neutra.png";
+      } else if (moyenneModule < 14) {
+        appreciation = "Assez bien";
+        imageSrc = "hhhh tswira .png";
+      } else if (moyenneModule < 16) {
+        appreciation = "Bien";
+        imageSrc = "smilehh.png";
+      } else {
+        appreciation = "Très bien";
+        imageSrc = "surprise.png";
+      }
+
+      document.getElementById("result").innerHTML = `
+        ${moyenneModule.toFixed(2)} - 
+        <img src="${imageSrc}" alt="${appreciation}">
+      `;
+    }
+    </script>
+</head>
+
+<body>
+    <div> Saisir la moyenne des controles (/20)
+        <input type="number" min=0 max=20 id="moyC" />
+    </div>
+    <div> Saisir la note de l'EFM (/40)
+        <input type="number" min=0 max=40 id="noteEFM" />
+    </div>
+    <div>
+        <button onclick="f1()"> Note Module</button>
+        <span></span>
+    </div>
+</body>
+
+</html>
